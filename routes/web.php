@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\contactcontroller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,6 +38,5 @@ Route::get('/index', function () {
     return view('template.index');
 });
 
-Route::get('/template/contact', function () {
-    return view('template.contact');
-});
+Route::get('template/contact', [contactcontroller::class, 'index']);
+Route::post('template/contact', [contactcontroller::class, 'store']);

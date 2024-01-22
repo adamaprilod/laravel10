@@ -10,4 +10,8 @@ class contactcontroller extends Controller
         return view('/template/contact' , [ "title" => "Contact"]);
     }
 
+    public function store(){
+        
+    }
+
 }

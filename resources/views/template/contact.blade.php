@@ -15,6 +15,7 @@
                         <!-- https://startbootstrap.com/solution/contact-forms-->
                         <!-- to get an API token!-->
                         <form class="form-signup" id="contactForm" data-sb-form-api-token="API_TOKEN" action="template/contact" method="post">
+                            @csrf
                             <!-- Email address input-->
                             <div class="row input-group-newsletter">
                                 <div class="col"><input class="form-control" id="emailAddress" type="email" placeholder="Enter email address..." aria-label="Enter email address..." data-sb-validations="required,email" /></div>
@@ -29,9 +30,6 @@
                             <div class="d-none" id="submitSuccessMessage">
                                 <div class="text-center mb-3 mt-2 text-white">
                                     <div class="fw-bolder">Form submission successful!</div>
-                                    To activate this form, sign up at
-                                    <br />
-                                    <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
                                 </div>
                             </div>
                             <!-- Submit error message-->
@@ -43,5 +41,16 @@
                     </div>
                 </div>
             </div>
+<br>
+<center>
+        @foreach ($items as $item)
+            <div class="card w-25">
+                <div class="card-body">
+                    <h5 class="card-title">EMAIL</h5>
+                    <p class="card-text">{{ $item->email}}</p>
+                </div>
+            </div>
+        @endforeach
+</center>
         </section>
 @endsection

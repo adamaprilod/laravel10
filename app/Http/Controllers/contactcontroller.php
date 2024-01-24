@@ -17,7 +17,7 @@ class contactcontroller extends Controller
     }
 
     public function store(Request $request){
-        dd($request);
+        DB::table('email') -> insert(['email' => $request -> email]);
+        return redirect()->back();
     }
-
 }
